@@ -139,7 +139,8 @@ dependencies = [
     "langchain-mcp-adapters>=0.1.14,<0.2.0",  # Pin to avoid incompatibility with langchain-core<1.0.0
     "agent-lifecycle-toolkit~=0.4.4",
     "astrapy>=2.1.0,<3.0.0",
-    "aioboto3>=15.2.0,<16.0.0"
+    "aioboto3>=15.2.0,<16.0.0",
+    "onnxruntime==1.22.2",
 ]
 
 
@@ -258,6 +259,10 @@ postgresql = [
 override-dependencies = [
     # temporary force a newer python-pptx
     "python-pptx>=1.0.2",
+    # Override onnxruntime for macOS 10.16 compatibility
+    # macOS 10.16 (Big Sur) doesn't support onnxruntime >= 1.23.0
+    # Limit to versions that support macOS 10.16
+    "onnxruntime<=1.16.3",
 ]
 
 [project.scripts]
