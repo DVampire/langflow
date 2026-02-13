@@ -17,7 +17,7 @@ maintainers = [
 ]
 # Define your main dependencies here
 dependencies = [
-    "langflow-base[complete]~=0.7.3",
+    "langflow-base[complete]~=0.8.0",
 ]
 
 
@@ -95,6 +95,7 @@ Documentation = "https://docs.langflow.org"
 docling = [
     "langchain-docling>=1.1.0",
     "tesserocr>=2.8.0",
+    "rapidocr-onnxruntime>=1.4.4",
     "ocrmac>=1.0.0; sys_platform == 'darwin'",
 ]
 
